@@ -35,15 +35,3 @@ def main():
     printUnivList(uinfo, 20)  # 20 univs
 
 main()
-
-
-'''
-r = requests.get("http://www.shanghairanking.com/ARWU2016.html")
-
-WebText = r.text
-
-soup = BeautifulSoup(WebText, 'html.parser')
-for form in soup.find.contents[3:504]
-print(type(soup.table.contents))
-
-'''
