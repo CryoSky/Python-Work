@@ -1,1 +1,1 @@
-# PythonSomething
+# SOme basic code for Python learning
