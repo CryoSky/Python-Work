@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
-# Code by cryosky, 2017-3-27, based on http://www.bilibili.com/video/av8834184
+# Code by cryosky, 2017-3-27, based on http://www.bilibili.com/video/av8834184 Last Homework for 中国大学MOOC-Python网络爬虫与信息提取
+# 首先通过源代码中Network查找到需要的请求，记住方法是get。
 
 import re
 import requests
@@ -25,9 +26,9 @@ def main(video):
     r = requests.get(url, headers = headers)   #requests的get方法
     bs = BeautifulSoup(r.text, 'html.parser')  #使用BeautifulSoup解析网页
 
-    title = bs.title.text.split('_')[0]
+    title = bs.title.text.split('_')[0]  #视频标题
     print(title)
-    link = 'http:' + bs.body.img['src']
+    link = 'http:' + bs.body.img['src']  #封面链接
 
     tail = re.findall('.*(\.\w+)', link)[0]
     pic = 'cover'+ tail
