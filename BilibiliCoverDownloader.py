@@ -22,8 +22,8 @@ def main(video):
         'Cookie':COOKIE
     }
 
-    r = requests.get(url, headers = headers)
-    bs = BeautifulSoup(r.text, 'html.parser')
+    r = requests.get(url, headers = headers)   #requests的get方法
+    bs = BeautifulSoup(r.text, 'html.parser')  #使用BeautifulSoup解析网页
 
     title = bs.title.text.split('_')[0]
     print(title)
