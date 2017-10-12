@@ -38,13 +38,9 @@ def get_PageNum(title):
     return intrealPageNum
 
 
-# 利用Soup第三方库实现抓取
+# 利用re.findall实现抓取，这里的链接是直接给出来的，所以方便抓
 def get_Image(html, title, number, pagenumber):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}  # 加头部
     tempnumber = str(int(number)+10000)
-#    print(tempnumber)
-#    tempnumber = '1'+ number
 #    print (tempnumber) 实际下载地址中后面加了个10000，比如number是6300，地址里是16300
     downloadlink = 'http://hahost2.imgscloud.com/fileshort/' + tempnumber
     all_image = re.findall(downloadlink+r".*?.jpg", html) # 这一步把所有的downloadlink抓出来了
@@ -53,7 +49,7 @@ def get_Image(html, title, number, pagenumber):
     os.mkdir('C:\\下载\\comic\\' + '%s' %entitle)  # 使用os库里的命令先创建一个文件夹，不然下面urlretrieve会报错
     for image in all_image:
         filename = number+'_'+ str(start).zfill(3)   # 输出6300_001这样的文件名
-        print (filename)
+        print (filename) # 每下载一个文件print一下
         urllib.request.urlretrieve(image, 'C:\\下载\\comic\\'+'%s\\'%title +'%s.jpg'%filename)
         start += 1
 
