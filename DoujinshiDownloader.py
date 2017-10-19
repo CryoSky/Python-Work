@@ -22,7 +22,7 @@ def get_HTML_content(url):
 def get_Title(content):
     soup = BeautifulSoup(content, 'html.parser')
     title = soup.find('h1').get_text()
-#    print (title)
+    print (title)
     return title
 
 # 找到漫画的页数
@@ -66,7 +66,7 @@ def main():
 
 
 '''
-    for intnumber in (6301,6302):  # 为什么不使用for循环呢？
+    for intnumber in range (1,100):  # 为什么不使用for循环呢？
         number = str(intnumber)
 '''
 
