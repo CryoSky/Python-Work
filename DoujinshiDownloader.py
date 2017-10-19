@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# Code by cryosky, 2017-10-10
+# Written by cryosky, 2017-10-10
 
 import re
 import urllib.request
@@ -46,7 +46,7 @@ def get_Image(html, title, number, pagenumber):
     all_image = re.findall(downloadlink+r".*?.jpg", html) # 这一步把所有的downloadlink抓出来了
 #    print (all_image)
     start = 1
-    os.mkdir('C:\\下载\\comic\\' + '%s' %entitle)  # 使用os库里的命令先创建一个文件夹，不然下面urlretrieve会报错
+    os.mkdir('C:\\下载\\comic\\' + '%s' %title)  # 使用os库里的命令先创建一个文件夹，不然下面urlretrieve会报错
     for image in all_image:
         filename = number+'_'+ str(start).zfill(3)   # 输出6300_001这样的文件名
         print (filename) # 每下载一个文件print一下
