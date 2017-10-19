@@ -57,12 +57,7 @@ def get_DownloadNum(content):
 
 # 利用Soup第三方库实现抓取
 def get_Image(html, title, number, downlinknum, flag):
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'}  # 加头部
-    tempnumber = str(downlinknum)
-#    print(tempnumber)
-#    tempnumber = '1'+ number
-#    print (tempnumber) 实际下载地址中后面加了个10000，比如number是6300，地址里是16300
+    tempnumber = str(downlinknum) #把真正的下载地址转为str
     downloadlink = 'http://hahost2.imgscloud.com/file/' + tempnumber
     if flag == 1:
         downloadlink = 'http://hbhost2.imgscloud.com/file/' + tempnumber
