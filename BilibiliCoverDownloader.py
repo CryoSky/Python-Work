@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# Code by cryosky, 2017-3-27, based on http://www.bilibili.com/video/av8834184 Last Homework for 中国大学MOOC-Python网络爬虫与信息提取
+# Written by cryosky, 2017-3-27, based on http://www.bilibili.com/video/av8834184 Last Homework for 中国大学MOOC-Python网络爬虫与信息提取
 # 首先通过源代码中Network查找到需要的请求，记住方法是get。
 
 import re
