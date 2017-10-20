@@ -55,7 +55,7 @@ def data_analysis():
         mu = math.pow(float(predata[4])*2 / float(predata[3]), 1/6)
 #        A = float(predata[4]) / math.pow(mu , 12)
         sigma = mu * 0.2 / math.pow(2 * math.log(2), 1/2)
-        Avalue = 0.1
+        Avalue = 1.0
         exvol = math.pow(0.25, 12)
 #        print("%.9E" % sigma)  # Check formatting
         ftemp2.write("%6d"% int(predata[0])+"%7d"% int(predata[1])+"%2d" % 6+'   '+ str(Avalue)+'   '+'%.9E' % mu+'   '+"%.9E" % sigma+'   '+"%.9E" % exvol+'\n')  # Use formatting symbol% to convert to Scientific notation
