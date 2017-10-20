@@ -3,14 +3,14 @@
 
 # This script will help convert LJ interaction to Gaussian type 6
 # This is for a Calpha version, so A has been sent as 0.1;
-# Written by Shikai Jin, 10/18/2017
-
+# Written by Shikai Jin, 10/20/2017
 
 import os
 import re
 import math
 import shutil
 
+# First back up original file
 def copyfile(fname):
     fnew = fname + '_old'
     shutil.copyfile(fname, fnew)
@@ -41,6 +41,7 @@ def data_output(fname):
     ftemp.close()
 
 
+# Open a new temporary2.txt file to convert LJ to Gaussian data
 def data_analysis():
     ftemp1 = open("temporary.txt", 'r')
     ftemp2 = open("temporary2.txt", 'w+')
@@ -63,6 +64,7 @@ def data_analysis():
     ftemp2.close()
 
 
+# Open a new result.txt file to get result
 def data_input(fname):
     ftemp2 = open("temporary2.txt", 'r')
     ftemp2.seek(0,0)
@@ -94,9 +96,12 @@ def data_input(fname):
     fori.close()
     ftemp2.close()
     fout.close()
+
+    
+# Replace result.txt to original file    
+def file_replace(fname):
     os.remove(fname)
     os.rename('result.txt', fname)
-
 
 def main():
 #    fname = "TopStructure.txt"
@@ -105,6 +110,7 @@ def main():
     data_output(fname)
     data_analysis()
     data_input(fname)
+    file_replace(fname)
 
 
 if __name__== '__main__':
