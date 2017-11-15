@@ -53,7 +53,7 @@ def data_analysis():
     for lines in range(2, len(a) - 1):
         predata = a[lines].split()
         print(predata)  # Check whether data is corrected
-        mu = math.pow((float(predata[4]) * 6 / float(predata[3]) * 5), 1 / 2)
+        mu = math.pow(float(predata[4]) * 6 / (float(predata[3]) * 5), 1 / 2)
         # For C alpha model, here the fourth and fifth column are C10 and C12. C12=5*r^12 C10=6*r^10  r=(6*C12/5*C10)^0.5
         sigma = 0.25 # this is empirical value in C alpha model
         # sigma = mu * 0.2 / math.pow(2 * math.log(2), 1 / 2) in all-atom
