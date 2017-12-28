@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# Code by cryosky, 2017-12-27, mainpart from https://www.icourse163.org/learn/BIT-1001870002?tid=1001963001#/learn/content?type=detail&id=1002794378&cid=1003153722 Python数据展示
+# Code by cryosky, 2017-12-27, main part copied from https://www.icourse163.org/learn/BIT-1001870002?tid=1001963001#/learn/content?type=detail&id=1002794378&cid=1003153722 Python数据展示
 
 from PIL import Image
 import numpy as np
