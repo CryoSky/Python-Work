@@ -11,7 +11,7 @@ a = np.asarray(Image.open('./'+filename).convert('L')).astype('float')   #conver
 
 depth = 10. 						# (0-100)
 grad = np.gradient(a)				#取图像灰度的梯度值
-grad_x, grad_y = grad 				#分别取横纵图像梯度值
+grad_x, grad_y = grad 				#分别取横纵图像梯度值, a,b=c理解为返回一个元组，然后c里面的值分别放入a和b中
 grad_x = grad_x*depth/100.
 grad_y = grad_y*depth/100.
 A = np.sqrt(grad_x**2 + grad_y**2 + 1.)
