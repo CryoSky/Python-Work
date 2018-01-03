@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 # This script will help convert LJ interaction to Gaussian type 6
+# The file is used for solving Gromacs version confilct between 5.0.4 and older one
 # This is for a Calpha version, so A has been sent as 0.1;
 # Written by Shikai Jin, 11/14/2017
 
