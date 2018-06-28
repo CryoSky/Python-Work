@@ -72,13 +72,14 @@ def submit(name, email, fasta):
 
 def main():
     parser = argparse.ArgumentParser(
-        usage="This script submits CASP13 regular targets of selected day to RaptorX-contact automatically")
+        description="This script submits CASP13 regular targets of selected day to RaptorX-contact automatically")
     parser.add_argument("-d","--date", help="date in yyyy-mm-dd format, default is today", type=str,
                         default=datetime.date.today())
-    parser.add_argument("-e","--email", help="email address to receive RaptorX", type=str, default='1964569056@qq.com')
+     parser.add_argument("-e", "--email", nargs='+', help="1 or more email addresses to receive RaptorX", type=str,
+                        default='1964569056@qq.com')
     args = parser.parse_args()
     today = args.date
-    email = args.email
+    email = args.email[]
 
     today = str(today)[0:10]
     print("The day you choose is %s" %today)
